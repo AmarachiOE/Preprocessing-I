@@ -56,6 +56,8 @@ q:before, q:after {
 
 /* ---------- VARIABLES ---------------------*/
 @accent-color: rgb(87, 17, 38);
+@section-margin-left: 5%;
+@section-margin-right: 5%;
 
 /* ---------- ELEMENT SETTINGS ------------ */
 
@@ -84,7 +86,7 @@ h2 {
 }
 
 h3 {
-	font-size: 1.17rem;
+	font-size: 1.7rem;
 }
 
 h4 {
@@ -163,9 +165,61 @@ em (
 }
 
 // INTRODUCTION SECTION
+.intro-section {
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	margin-bottom: 2%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	// flex-wrap: wrap;
+	width: 90%;
+	height: 30%;
+	padding-bottom: 5%;
+	border-bottom: 2px dashed black;
+	// border: 1px solid red;
+
+	.intro-text {
+		width: 40%;
+		margin: auto 0;
+		text-align: center;
+		// border: 1px solid red;
+	}
+
+	.Amarachi-pic {
+		// margin-right: 20%;
+		height: 20%;
+		width: 20%;
+
+	}
+}
+
+// SKILLS SECTION
+.skills-section {
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+}
+	h2 {
+		margin-bottom: 3%;
+	}
+
+	.skills-section-content {
+		margin-left: @section-margin-left;
+		margin-right: @section-margin-right;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 60px;
+		width: 90%;
+
+		.skills-tech, .skills-health {
+			margin-right: 5%;
+		}
 
 
 
+}
 
 // WORK HISTORY -- TABLE
 
