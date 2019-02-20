@@ -122,17 +122,99 @@ q:after {
   content: '';
   content: none;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+/* table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} // STYLING TABLE DOWN BELOW */
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
+/* ---------- VARIABLES ---------------------*/
+/* ---------- ELEMENT SETTINGS ------------ */
+html {
+  font-size: 62.5%;
+}
 html,
 body {
-  width: 100%;
   height: 100%;
-  background-color: lightgray;
+  font-family: 'Titillium Web', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2rem;
+  color: #571126;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+p {
+  font-size: 1.5rem;
+}
+strong {
+  font-weight: bold;
+}
+em (
+	font-style: italic;
+) .container {
+  width: 100%;
+}
+/* ---------- BODY CONTENT CODE ------------ */
+.navigation-section {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+.navigation-section a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #571126;
+}
+.navigation-section a:first-child {
+  margin-left: 60%;
+}
+.navigation-section a:hover {
+  text-decoration: underline;
+}
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% auto 2%;
+  background-color: black;
+  color: white;
+  padding: 2% 0;
+}
+.home-header .italic {
+  font-style: italic;
+}
+.home-header h1 {
+  margin-top: 1%;
+}
+table {
+  width: 90%;
+}
+table td {
+  font-size: 1.8rem;
 }
