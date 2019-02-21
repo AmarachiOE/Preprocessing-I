@@ -227,9 +227,10 @@ strong {
   width: 40%;
   margin: auto 0;
   text-align: center;
+  padding-right: 10%;
 }
 .intro-section .p-intro {
-  padding-bottom: 5px;
+  padding-bottom: 5%;
 }
 .intro-section .Amarachi-pic {
   height: 20%;
