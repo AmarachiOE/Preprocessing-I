@@ -43,17 +43,349 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
+/* table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+} // STYLING TABLE DOWN BELOW */
 
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+
+/* ---------- VARIABLES ---------------------*/
+@accent-color: rgb(87, 17, 38);
+@yellow-color: #FCF0CF;
+@section-margin-left: 5%;
+@section-margin-right: 5%;
+@mobile: (max-width: 500px);
+
+/* ---------- MIXINS -----------------------*/
+.border-bottom() {
+	margin-bottom: 2%;
+	border-bottom: 2px dashed black;
 }
 
+.sub-section() {
+	height: 30px;
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding-top: 2%;
+	margin: 4%;
+}
+/* ---------- ELEMENT SETTINGS ------------ */
+
+html {
+	font-size: 62.5%;
+}
+
+html, body {
+	height: 100%;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+	margin-bottom: 1.5rem;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 2rem;
+	color: @accent-color;
+}
+
+h3 {
+	font-size: 1.7rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+h5 {
+	font-size: 0.83rem;
+}
+
+h6 {
+	font-size: 0.67rem;
+}
+
+p {
+	font-size: 1.5rem;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.container {
+	width: 100%;
+}
+
+
+/* ---------- BODY CONTENT CODE ------------ */
+
+// NAVIGATION SECTION
+.navigation-section {
+	width: 90%;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 2% auto 0;
+
+	@media @mobile {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		// text-align: center;
+		padding: 10px 0px;
+		border-bottom: 1px solid lightgray;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: @accent-color;
+
+		@media @mobile {
+			width: 100%;
+			text-align: center;
+			padding: 15px 0;
+			border-bottom: 1px solid lightgray;
+		}
+	}
+
+	// a:first-child {
+	// 	margin-left: 60%;
+	// }
+
+	a:hover {
+		text-decoration: underline;
+		color: black;
+	}
+
+}
+
+
+// HEADER SECTION
+.home-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2% auto 2%;
+	background-color: black;
+	color: white;
+	padding: 2% 0;
+
+	
+
+	.italic {
+		font-style: italic;
+	}
+
+	h1 {
+		margin-top: 1%;
+
+		@media @mobile {
+			font-size: 2rem;
+		}
+	}
+
+	p {
+		@media @mobile {
+			font-size: 1rem;
+		}
+	}
+}
+
+// INTRODUCTION SECTION
+.intro-section {
+	background-color: @yellow-color;
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	margin-top: 3%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 90%;
+	padding-bottom: 2%;
+	// border: 2px solid red;
+	.border-bottom();
+	// border-bottom: 2px dashed black; used mixin
+	// margin-bottom: 2%; replaced with .border-bottom mixin
+
+	@media @mobile {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.intro-text {
+		width: 60%;
+		margin: auto 0;
+		text-align: center;
+		padding-top: 5%;
+		// border: 1px solid red;
+
+		@media @mobile {
+			width: 100%;
+		}
+		.p-intro {
+			padding-bottom: 5%;
+		}
+	}	
+	.Amarachi-pic {
+		margin: auto 0;
+		padding-top: 2%;
+		height: 100%; 
+		width: 28%; //takes up 30% of parent box
+		vertical-align: middle;
+
+	}
+
+}
+
+// SKILLS SECTION
+.skills-section {
+	width: 90%;
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	.border-bottom();
+	// border-bottom: 2px dashed black; used mixin
+	// margin-bottom: 2%; used mixin
+
+	h2 {
+		margin-bottom: 3%;
+	}
+
+	.skills-section-content {
+		background-color: @yellow-color;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 60px;
+		// don't need below because inherited from parent
+		// width: 100%;
+		// margin-left: @section-margin-left;
+		// margin-right: @section-margin-right;
+
+
+		@media @mobile {
+			flex-direction: column;
+		}
+
+		.skills-tech, .skills-health {
+			margin-right: 5%;
+		}
+	}
+
+	h3 {
+		.sub-section();
+	}
+
+	p {
+		padding: 0 3% 0;
+	}
+
+}
+
+// WORK HISTORY -- TABLE
+.work-history-section {
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	padding-bottom: 3%;
+	.border-bottom();
+	
+	table {
+		width: 100%;
+		border: 2px solid @accent-color;
+		border-collapse: collapse;
+	
+		th {
+			font-size: 1.7rem;
+			border-bottom: 2px solid @accent-color;
+			border-right: 2px solid black;
+			padding: 1rem;
+			text-align: left;
+			background-color: black;
+			color: white;
+		}
+
+		td {
+			font-size: 1.5rem;
+			border-bottom: 1px solid @accent-color;
+			border-right: 2px solid @accent-color;
+			padding: 1rem;
+			color: @accent-color;
+
+		}	
+
+		// give every other row a background color
+		tr:nth-child(odd) {
+			background-color: @yellow-color;
+
+		}
+	}	
+}
+
+// CONTACT ME
+.contact-section {
+	width: 90%;
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	padding-bottom: 3%;
+	margin-bottom: 5%;
+	.border-bottom();
+
+	.contact-text {
+
+		.p-contact {
+			margin-bottom: 2%;
+		}
+	}
+	
+	.form{
+		font-size: 1.5rem;
+
+		.short-line {
+			width: 50%;
+			padding: 12px 0;
+			margin: 1% 0;
+			border: 1px solid @accent-color;
+			border-radius: 5px;
+		}
+
+		.long-line {
+			width: 80%;
+			height: 10rem;
+			padding: 12px 0;
+			margin: 1% 0;
+			border: 1px solid @accent-color;
+			border-radius: 5px;
+		}
+
+		input[type=submit] {
+			width: 20%;
+			height: 4rem;
+			margin-top: 1%;
+			background-color: @accent-color;
+			border: 1px solid @accent-color;
+			border-radius: 5px;
+			font-size: 1.8rem;
+			color: white;
+			cursor: pointer;
+		}
+	}
+	
+}
+
+
+
+// .header-img {
+// 	width: 70%;
