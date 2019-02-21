@@ -58,7 +58,21 @@ q:before, q:after {
 @accent-color: rgb(87, 17, 38);
 @section-margin-left: 5%;
 @section-margin-right: 5%;
+@mobile: (max-width: 500px);
 
+/* ---------- MIXINS -----------------------*/
+.border-bottom() {
+	margin-bottom: 2%;
+	border-bottom: 2px dashed black;
+}
+
+.sub-section() {
+	height: 30px;
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding-top: 2%;
+}
 /* ---------- ELEMENT SETTINGS ------------ */
 
 html {
@@ -108,10 +122,6 @@ p {
 strong {
 	font-weight: bold;
 }
-
-em (
-	font-style: italic;
-)
 
 .container {
 	width: 100%;
@@ -168,7 +178,7 @@ em (
 .intro-section {
 	margin-left: @section-margin-left;
 	margin-right: @section-margin-right;
-	margin-bottom: 2%;
+	// margin-bottom: 2%; replaced with .border-bottom mixin
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -176,7 +186,8 @@ em (
 	width: 90%;
 	height: 30%;
 	padding-bottom: 5%;
-	border-bottom: 2px dashed black;
+	.border-bottom();
+	// border-bottom: 2px dashed black; used mixin
 	// border: 1px solid red;
 
 	.intro-text {
@@ -186,19 +197,27 @@ em (
 		// border: 1px solid red;
 	}
 
+		.p-intro {
+			padding-bottom: 5px;
+		}
+
 	.Amarachi-pic {
 		// margin-right: 20%;
 		height: 20%;
 		width: 20%;
 
 	}
+
 }
 
 // SKILLS SECTION
 .skills-section {
 	margin-left: @section-margin-left;
 	margin-right: @section-margin-right;
-}
+	.border-bottom();
+	// border-bottom: 2px dashed black; used mixin
+	// margin-bottom: 2%; used mixin
+
 	h2 {
 		margin-bottom: 3%;
 	}
@@ -213,27 +232,51 @@ em (
 		padding-bottom: 60px;
 		width: 90%;
 
+		@media @mobile {
+			flex-direction: column;
+		}
+
 		.skills-tech, .skills-health {
 			margin-right: 5%;
 		}
+	}
 
-
+	h3 {
+		.sub-section();
+	}
 
 }
 
 // WORK HISTORY -- TABLE
-
-table {
-	width: 90%;
-
-	td {
-		font-size: 1.8rem;
-	}
+.work-history-section {
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	padding-bottom: 3%;
+	.border-bottom();
+	
+	table {
+		width: 90%;
+		border: 1px solid black;
+	
+		th {
+			font-size: 1.7rem;
+			// text-align: left;
+		}
+		td {
+			font-size: 1.5rem;
+		}	
+	}	
 }
 
+// CONTACT ME
+.contact-section {
+	margin-left: @section-margin-left;
+	margin-right: @section-margin-right;
+	padding-bottom: 3%;
+	.border-bottom();
+}
 
 
 
 // .header-img {
 // 	width: 70%;
-// }
